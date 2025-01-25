@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+
+    <title>Generator av guld;)</title>
+
+
+
+</head>
+<body>
+
+
+
+	<div class="container">
+    <h1>EN SANN FRÖKEN SNUSK SMÄLLARE</h1>
+    <p id="sentence">KLICKA FÖR SANN POESI</p>
+    <button onclick="generateAndDisplaySentence(); alerts();">Generera</button>
+	</div>
+
+ <img src="va.png" alt="va">
+    
+	    <img src="fröken.png" alt="fröken" class="snusk">
+    
+	    <img src="gozzi.png" alt="gozzi" class="bot">
+    
+	     <img src="mask.png" alt="mask" class="bottom">
+
+    <script>
+
+ let alertShown = false;
+
+function alerts() {
+		    if (!alertShown) {
+		    alert("Tänk om istället för fröken snusk så var det fru anständig? och alla vara ordentliga?");
+		    alertShown = true;
+				}
+	    }
+
+
+        const subjects = ["luder", "brudar", "raggare", "Vi", "jag", "Fröken", "gozzi", "daddy", "gynekologen", "fuckboy", "Pappa", "Gumman", "mamma", "bror"];
+        const verbs = ["dricker", "känner", "leker", "hittar", "vet", "kommer", "vill ha", "slutar", "säger", "strögar", "fingrar", "raggar", "luktar", "kommer", "vill", "kan", "rider", "ser", "knulla", "suger", "blir", "önskar", "tar", "rör", "åker", "ses" ];
+        const objects = ["dalmobrudar", "Du", "Raggare", "Daddy", "Gozzi", "Raggartjejer", "Ja", "Raggen kommer"];
+        const adverbs = ["nu", "alltid", "här", "mest", "ikväll", "Oh-who oh-oh", "natten lång", "en dag"];
+ 
+
+const ads =  ["mest", "minst", "värst"];
+const adjektivs = ["bäst","sist", "störst", "minst", "kåtast", "friast", "ensamast"];
+	    const prepositions = ["i", "med", "till", "om", "av", "på"];
+
+
+        function getRandomAndRemove(arr) {
+	    if (arr.length === 0) return null;
+const index = Math.floor(Math.random() * arr.length);
+   return arr.splice(index, 1)[0]; 
+    }
+
+
+    function getRandomElement(arr) {
+        return arr[Math.floor(Math.random() * arr.length)];
+    }
+
+function generateRandomSentence() {
+		    const unusedSubjects = [...subjects];
+
+         const subject1 = getRandomAndRemove(unusedSubjects);
+            const subject2 = getRandomAndRemove(unusedSubjects);
+ if (!subject1 || !subject2) return "Not enough unique subjects to generate a sentence.";
+
+		    const ad = getRandomElement(ads);
+            const verb = getRandomElement(verbs);
+            const object = getRandomElement(objects);
+            const adverb = getRandomElement(adverbs);
+const adjektiv = getRandomElement(adjektivs);
+const preposition = getRandomElement(prepositions);
+
+            
+            const sentence =  `${subject1} vem är det som ${verb} ${ad}? ${subject1} ${verb} ${preposition} ${subject2} ${adverb}. ${object}, ${verb} ${adverb}.`;
+            return sentence;
+        }
+
+        
+        function generateAndDisplaySentence() {
+            const randomSentence = generateRandomSentence();
+            document.getElementById('sentence').textContent = randomSentence;
+        }
+    </script>
+</body>
+</html>
+
+
