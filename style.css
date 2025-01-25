@@ -1,0 +1,43 @@
+
+body {
+	background-color: #ff3399;
+font-family: "impact", charcoal, sans-serif;
+font-weight: bold;
+}
+
+.snusk  {
+	float: right;
+z-index: 1000;	 
+}
+
+.bottom {
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	z-index: 1000;
+	 }
+
+
+.bot {
+        position: fixed;
+        bottom: 0;
+	left: 0;
+	z-index: 1000;
+	}
+
+
+
+.container {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	text-align: center;
+	}
+
+
+	 #sentence {
+      margin-top: 20px;
+      font-size: 50px;
+      font-weight: bold;
+    }
