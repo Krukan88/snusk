@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+
+    <title>Generator av guld;)</title>
+
+
+
+</head>
+<body>
+
+
+
+	<div class="container">
+    <h1>EN SANN FRÖKEN SNUSK SMÄLLARE</h1>
+    <p id="sentence">KLICKA FÖR SANN POESI</p>
+    <button onclick="generateAndDisplaySentence(); alerts();">Generera</button>
+
+	<button onclick="spin();">Klicka för gambling</button>
+	<div class="wheel-container" id="wheel-container" >
+		<div class="pin" id="pin"></div>
+	<img src="hjul.png" alt="hjul" class="spinner" id="spinner" >
+	</div>
+	</div>
+
+
+ <img src="va.png" alt="va">
+    
+	    <img src="fröken.png" alt="fröken" class="snusk">
+    
+	    <img src="gozzi.png" alt="gozzi" class="bot">
+    
+	     <img src="mask.png" alt="mask" class="bottom">
+
+    <script>
+let currentRotation = 0;
+
+function spin() {
+ var spinner = document.getElementById("spinner");
+var pin = document.getElementById("pin");
+var wheelContainer = document.getElementById("wheel-container");
+
+
+		    spinner.style.display = "block";
+		     wheelContainer.style.display = "block";
+            pin.style.display = "block";
+
+		    setTimeout(() => {
+		    let rotation = Math.floor(Math.random() * 360) + 3600;
+
+currentRotation += rotation
+
+		     spinner.style.transform = "translate(-50%, -50%) rotate(" + currentRotation + "deg)";
+	 }, 10);
+		  
+		    setTimeout(() => {
+		        wheelContainer.style.display = "none";
+                    pin.style.display = "none";			
+                spinner.style.display = "none"; 
+            }, 5500);
+	    }
+ 
+
+
+
+
+ let alertShown = false;
+
+function alerts() {
+		    if (!alertShown) {
+		    alert("Tänk om istället för fröken snusk så var det fru anständig? och alla vara ordentliga?");
+		    alertShown = true;
+				}
+	    }
+
+
+        const subjects = ["luder", "brudar", "raggare", "Vi", "jag", "Fröken", "gozzi", "daddy", "gynekologen", "fuckboy", "Pappa", "Gumman", "mamma", "bror"];
+        const verbs = ["dricker", "känner", "leker", "hittar", "vet", "kommer", "vill ha", "slutar", "säger", "strögar", "fingrar", "raggar", "luktar", "kommer", "vill", "kan", "rider", "ser", "knulla", "suger", "blir", "önskar", "tar", "rör", "åker", "ses" ];
+        const objects = ["dalmobrudar", "Du", "Raggare", "Daddy", "Gozzi", "Raggartjejer", "Ja", "Raggen kommer"];
+        const adverbs = ["nu", "alltid", "här", "mest", "ikväll", "Oh-who oh-oh", "natten lång", "en dag"];
+ 
+
+const ads =  ["mest", "minst", "värst"];
+const adjektivs = ["bäst","sist", "störst", "minst", "kåtast", "friast", "ensamast"];
+	    const prepositions = ["i", "med", "till", "om", "av", "på"];
+
+
+        function getRandomAndRemove(arr) {
+	    if (arr.length === 0) return null;
+const index = Math.floor(Math.random() * arr.length);
+   return arr.splice(index, 1)[0]; 
+    }
+
+
+    function getRandomElement(arr) {
+        return arr[Math.floor(Math.random() * arr.length)];
+    }
+
+function generateRandomSentence() {
+		    const unusedSubjects = [...subjects];
+
+         const subject1 = getRandomAndRemove(unusedSubjects);
+            const subject2 = getRandomAndRemove(unusedSubjects);
+ if (!subject1 || !subject2) return "Not enough unique subjects to generate a sentence.";
+
+		    const ad = getRandomElement(ads);
+            const verb = getRandomElement(verbs);
+            const object = getRandomElement(objects);
+            const adverb = getRandomElement(adverbs);
+const adjektiv = getRandomElement(adjektivs);
+const preposition = getRandomElement(prepositions);
+
+            
+            const sentence =  `${subject1} vem är det som ${verb} ${ad}? ${subject1} ${verb} ${preposition} ${subject2} ${adverb}. ${object}, ${verb} ${adverb}.`;
+            return sentence;
+        }
+
+        
+        function generateAndDisplaySentence() {
+            const randomSentence = generateRandomSentence();
+            document.getElementById('sentence').textContent = randomSentence;
+        }
+    </script>
+</body>
+</html>
+
+
